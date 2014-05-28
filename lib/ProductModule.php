@@ -39,6 +39,22 @@ namespace UsabilityDynamics\Installers {
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function getPackageBasePath(PackageInterface $package) {
+
+      $prefix = substr($package->getPrettyName(), 0, 23);
+
+      if ('wp-module-' !== $prefix) {
+        // throw new \InvalidArgumentException( 'Unable to install template, WP Module templates should always start with wp-module-' );
+      }
+
+      return 'vendor/module/'.substr($package->getPrettyName(), 23);
+
+    }
+
+
+    /**
      * Returns which object types we support
      *
      */
