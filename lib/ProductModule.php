@@ -3,7 +3,7 @@ namespace UsabilityDynamics\Installers {
 
   use Composer\Plugin;
 
-  class ProductModule implements PluginInterface {
+  class ProductModule implements \Composer\Plugin\PluginInterface {
 
   }
 
