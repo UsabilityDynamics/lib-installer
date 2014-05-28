@@ -1,12 +1,16 @@
 <?php
 namespace UsabilityDynamics\Installers {
 
-  use Composer\Plugin;
+  use Composer\Composer;
+  use Composer\IO\IOInterface;
+  use Composer\Plugin\PluginInterface;
 
-  class ProductModule implements \Composer\Plugin\PluginInterface {
+  class ProductModule implements PluginInterface {
 
     public function activate(Composer $composer, IOInterface $io)
     {
+      $installer = new TemplateInstaller($io, $composer);
+      $composer->getInstallationManager()->addInstaller($installer);
     }
 
   }
