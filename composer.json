@@ -48,7 +48,7 @@
         }
     ],
     "autoload": {
-        "psr-0": { "UsabilityDynamics\\Installers\\": "src/" }
+        "psr-0": { "UsabilityDynamics\\Installers\\": "lib/" }
     },
     "extra": {
         "class": "UsabilityDynamics\\Installers\\Installer",
