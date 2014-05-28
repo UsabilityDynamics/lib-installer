@@ -1,19 +1,23 @@
 <?php
+/**
+ *
+ */
 namespace UsabilityDynamics\Installers {
 
   use Composer\Installer\LibraryInstaller;
   use Composer\Package\PackageInterface;
   use Composer\Repository\InstalledRepositoryInterface;
 
+  /**
+   * Class ProductModule
+   *
+   * @package UsabilityDynamics\Installers
+   */
   class ProductModule extends LibraryInstaller {
-
-    protected $locations = array(
-      'package'   => 'wp-content/package/{$name}/',
-      'module'    => 'wp-content/module/{$name}/'
-    );
 
     /**
      * Our supported object types
+     *
      */
     protected $supported = array(
       'wordpress-package',
@@ -21,11 +25,12 @@ namespace UsabilityDynamics\Installers {
     );
 
     /**
-     * Our supported directory maps
+     * Our supported install locations.
+     *
      */
-    protected $directory_map = array(
-      'wordpress-module' => 'modules/::name::',
-      'wordpress-package' => 'packages/::name::'
+    protected $locations = array(
+      'wordpress-module'  => 'modules/{name}',
+      'wordpress-package' => 'packages/{name}'
     );
 
     /**
@@ -34,25 +39,32 @@ namespace UsabilityDynamics\Installers {
      *
      */
     public function install( InstalledRepositoryInterface $repo, PackageInterface $package ) {
-      print "Installing::" . $package->getPrettyName() . "::" . $package->getPrettyVersion() . " (ProductModule)\r\n";
+      // print "Installing::" . $package->getPrettyName() . "::" . $package->getPrettyVersion() . " (ProductModule)\r\n";
       return parent::install( $repo, $package );
     }
 
     /**
+     *
+     * @todo May want to add a naming convention enforcement, e.g. "wp-module-{}" for modules.
      * {@inheritDoc}
      */
-    public function getPackageBasePath(PackageInterface $package) {
+    public function getPackageBasePath( PackageInterface $package ) {
 
-      $prefix = substr($package->getPrettyName(), 0, 23);
+      $_split       = strpos( $package->getPrettyName(), '/' );
+      $vendor_name  = substr( $package->getPrettyName(), 0, $_split );
+      $package_name = substr( $package->getPrettyName(), ( $_split + 1 ) );
 
-      if ('wp-module-' !== $prefix) {
-        // throw new \InvalidArgumentException( 'Unable to install template, WP Module templates should always start with wp-module-' );
+      if( isset( $this->vendorDir ) && $this->vendorDir ) {
+        $install_path = dirname( $this->vendorDir ) . '/' . $this->locations[ $package->getType() ];
+        $install_path = str_ireplace( '{vendor}',   $vendor_name,         $install_path );
+        $install_path = str_ireplace( '{name}',     $package_name,          $install_path );
+        $install_path = str_ireplace( '{version}',  $package->getVersion(), $install_path );
+        return $install_path;
       }
 
-      return 'vendor/module/'.substr($package->getPrettyName(), 23);
+      return $package_name;
 
     }
-
 
     /**
      * Returns which object types we support
