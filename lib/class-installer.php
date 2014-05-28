@@ -1,5 +1,5 @@
 <?php
-namespace Composer\Installers {
+namespace UsabilityDynamics\Installers {
 
   use Installer\LibraryInstaller;
   use \Composer\Package\PackageInterface;
