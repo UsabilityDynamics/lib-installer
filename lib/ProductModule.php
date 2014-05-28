@@ -12,6 +12,7 @@ namespace UsabilityDynamics\Installers {
      * Our supported object types
      */
     protected $supported = array(
+      'wordpress-product',
       'wordpress-module'
     );
 
@@ -19,7 +20,8 @@ namespace UsabilityDynamics\Installers {
      * Our supported directory maps
      */
     protected $directory_map = array(
-      'wordpress-module' => 'module/::name::'
+      'wordpress-module' => 'module/::name::',
+      'wordpress-product' => 'module/::name::'
     );
 
     /**
