@@ -12,10 +12,10 @@
     }
   ],
   "autoload": {
-    "classmap": [ "lib" ]
+    "psr-4": { "UsabilityDynamics\\Installers\\ProductModule": "lib/" }
   },
   "extra": {
-    "class": "UsabilityDynamics\\Installer\\ProductModuleInstaller",
+    "class": "UsabilityDynamics\\Installers\\ProductModule",
     "branch-alias": {
       "dev-master": "1.0-dev"
     }
