@@ -1,0 +1,65 @@
+{
+    "name": "usabilitydynamics/lib-installer",
+    "type": "composer-installer",
+    "license": "MIT",
+    "description": "A multi-framework Composer library installer",
+    "keywords": [
+        "installer",
+        "AGL",
+        "AnnotateCms",
+        "CakePHP",
+        "CodeIgniter",
+        "concrete5",
+        "Craft",
+        "Croogo",
+        "Drupal",
+        "Elgg",
+        "FuelPHP",
+        "Hurad",
+        "Joomla",
+        "Kohana",
+        "Laravel",
+        "Lithium",
+        "Magento",
+        "Mako",
+        "MODX Evo",
+        "MediaWiki",
+        "OXID",
+        "MODULEWork",
+        "Piwik",
+        "phpBB",
+        "PPI",
+        "Roundcube",
+        "shopware",
+        "SilverStripe",
+        "symfony",
+        "TYPO3",
+        "WolfCMS",
+        "WordPress",
+        "Zend",
+        "Zikula"
+    ],
+    "homepage": "http://composer.github.com/installers/",
+    "authors": [
+        {
+            "name": "Kyle Robinson Young",
+            "email": "kyle@dontkry.com",
+            "homepage": "https://github.com/shama"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "UsabilityDynamics\\Installers\\": "src/" }
+    },
+    "extra": {
+        "class": "UsabilityDynamics\\Installers\\Installer",
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "replace": {
+    },
+    "require-dev": {
+        "composer/composer": "1.0.*@dev",
+        "phpunit/phpunit": "3.7.*"
+    }
+}
