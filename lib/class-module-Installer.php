@@ -1,7 +1,7 @@
 <?php
 namespace UsabilityDynamics\Installers {
 
-  class ModuleInstaller extends BaseInstaller {
+  class ProductInstaller extends BaseInstaller {
       protected $locations = array(
         'product-module'    => 'modules/{$name}/'
       );

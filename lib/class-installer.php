@@ -6,13 +6,14 @@ namespace UsabilityDynamics\Installers {
   use \Composer\Repository\InstalledRepositoryInterface;
 
   class Installer extends LibraryInstaller {
+
     /**
      * Package types to installer class map
      *
      * @var array
      */
     private $supportedTypes = array(
-      'product'    => 'ModuleInstaller'
+      'product'    => 'ProductInstaller'
     );
 
     /**

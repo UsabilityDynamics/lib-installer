@@ -4,8 +4,7 @@ namespace UsabilityDynamics\Installers {
   use \Composer\Composer;
   use \Composer\Package\PackageInterface;
 
-  abstract class BaseInstaller
-  {
+  abstract class BaseInstaller {
       protected $locations = array();
       protected $composer;
       protected $package;
