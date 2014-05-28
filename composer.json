@@ -1,33 +1,31 @@
 {
-    "name": "usabilitydynamics/lib-installer",
-    "type": "composer-installer",
-    "license": "MIT",
-    "description": "A multi-framework Composer library installer",
-    "homepage": "http://composer.github.com/installers/",
-    "authors": [
-        {
-            "name": "Kyle Robinson Young",
-            "email": "kyle@dontkry.com",
-            "homepage": "https://github.com/shama"
-        }
-    ],
-    "autoload": {
-        "classmap": "lib"
-    },
-    "extra": {
-        "class": "UsabilityDynamics\\Installers",
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
-    },
-    "replace": {
-    },
-    "require": {
-      "php": ">=5.3",
-      "composer/installers": "~1.0"
-    },
-    "require-dev": {
-        "composer/composer": "1.0.*@dev",
-        "phpunit/phpunit": "3.7.*"
+  "name": "usabilitydynamics/lib-installer",
+  "type": "composer-installer",
+  "license": "MIT",
+  "description": "A multi-framework Composer library installer",
+  "homepage": "http://composer.github.com/installers/",
+  "authors": [
+    {
+      "name": "Kyle Robinson Young",
+      "email": "kyle@dontkry.com",
+      "homepage": "https://github.com/shama"
     }
+  ],
+  "autoload": {
+    "classmap": "lib"
+  },
+  "extra": {
+    "class": "UsabilityDynamics\\Installers\\Installer",
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  },
+  "require": {
+    "php": ">=5.3",
+    "composer/installers": "~1.0"
+  },
+  "require-dev": {
+    "composer/composer": "1.0.*@dev",
+    "phpunit/phpunit": "3.7.*"
+  }
 }
