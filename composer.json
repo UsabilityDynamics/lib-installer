@@ -15,6 +15,7 @@
     "classmap": [ "lib" ]
   },
   "extra": {
+    "class": "UsabilityDynamics\\Installer\\ProductModuleInstaller",
     "branch-alias": {
       "dev-master": "1.0-dev"
     }
