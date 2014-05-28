@@ -12,10 +12,9 @@
     }
   ],
   "autoload": {
-    "classmap": "lib"
+    "classmap": [ "lib" ]
   },
   "extra": {
-    "class": [ "UsabilityDynamics\\Installers\\Installer" ],
     "branch-alias": {
       "dev-master": "1.0-dev"
     }
