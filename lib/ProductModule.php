@@ -28,7 +28,8 @@ class ProductModule extends LibraryInstaller
    */
   public function install( InstalledRepositoryInterface $repo, PackageInterface $package ){
 
-    print "Installing::" . $package->getPrettyName() . "::" . $package->getPrettyVersion() . "\r\n";
+    print "Installing::" . $package->getPrettyName() . "::" . $package->getPrettyVersion() . " (ProductModule)\r\n";
+
     /** First, check to see if we have extra versions to install */
     if( $this->composer->getPackage() && !isset( $package->isClone ) ){
       $extra = $this->composer->getPackage()->getExtra();
