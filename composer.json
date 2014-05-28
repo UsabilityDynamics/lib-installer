@@ -15,7 +15,7 @@
     "psr-4": { "UsabilityDynamics\\Installers\\ProductModule": "lib/" }
   },
   "extra": {
-    "class": "UsabilityDynamics\\Installers\\",
+    "class": "UsabilityDynamics\\Installers\\ProductModule",
     "branch-alias": {
       "dev-master": "1.0-dev"
     }
