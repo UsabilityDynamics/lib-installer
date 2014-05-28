@@ -13,16 +13,13 @@ class ProductModule extends LibraryInstaller
    * Our supported object types
    */
   protected $supported = array(
-    'wordpress-plugin',
-    'wordpress-muplugin'
+    'wordpress-product'
   );
 
   /**
    * Our supported directory maps
    */
   protected $directory_map = array(
-    'wordpress-plugin' => 'modules/::name::',
-    'wordpress-muplugin' => 'libraries/::vendor::/::name::'
   );
 
   /**
