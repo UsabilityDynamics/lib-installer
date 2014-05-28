@@ -7,19 +7,10 @@ namespace UsabilityDynamics\Installers {
 
   class ProductModule extends LibraryInstaller {
 
-    private $supportedTypes = array(
-      'wordpress'    => 'WordPressInstaller',
-      'zend'         => 'ZendInstaller',
-      'zikula'       => 'ZikulaInstaller',
-      'typo3-flow'   => 'TYPO3FlowInstaller',
-      'typo3-cms'    => 'TYPO3CmsInstaller',
-    );
     protected $locations = array(
-      'plugin'    => 'wp-content/plugins/{$name}/',
-      'theme'     => 'wp-content/themes/{$name}/',
-      'muplugin'  => 'wp-content/mu-plugins/{$name}/',
+      'package'   => 'wp-content/package/{$name}/',
+      'module'    => 'wp-content/module/{$name}/'
     );
-
 
     /**
      * Our supported object types
