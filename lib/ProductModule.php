@@ -118,3 +118,5 @@ class ProductModule extends LibraryInstaller
   }
 
 }
+
+}
