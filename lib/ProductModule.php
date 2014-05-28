@@ -5,6 +5,10 @@ namespace UsabilityDynamics\Installers {
 
   class ProductModule implements \Composer\Plugin\PluginInterface {
 
+    public function activate(Composer $composer, IOInterface $io)
+    {
+    }
+
   }
 
 }
