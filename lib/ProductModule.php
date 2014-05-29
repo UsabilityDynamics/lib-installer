@@ -54,9 +54,21 @@ namespace UsabilityDynamics\Installers {
       $vendor_name  = substr( $package->getPrettyName(), 0, $_split );
       $package_name = substr( $package->getPrettyName(), ( $_split + 1 ) );
 
+      $extra = $package->getExtra();
+
+//      die( '<pre>' . print_r( $package->getPrettyName(), true ) . '</pre>' );
+//      die( '<pre>' . print_r( $package->getDistType(), true ) . '</pre>' );
+//      die( '<pre>' . print_r( $package->getDistUrl(), true ) . '</pre>' );
+//      die( '<pre>' . print_r( $extra, true ) . '</pre>' );
+//      die( '<pre>' . print_r( get_class_methods(  $package ), true ) . '</pre>' );
+
+      if (!empty($extra['installer-name'])) {
+        $package_name = $extra['installer-name'];
+      }
+
       if( isset( $this->vendorDir ) && $this->vendorDir ) {
         $install_path = dirname( $this->vendorDir ) . '/' . $this->locations[ $package->getType() ];
-        $install_path = str_ireplace( '{vendor}',   $vendor_name,         $install_path );
+        $install_path = str_ireplace( '{vendor}',   $vendor_name,           $install_path );
         $install_path = str_ireplace( '{name}',     $package_name,          $install_path );
         $install_path = str_ireplace( '{version}',  $package->getVersion(), $install_path );
         return $install_path;
