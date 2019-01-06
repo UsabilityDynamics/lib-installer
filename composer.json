@@ -1,6 +1,6 @@
 {
-  "name": "usabilitydynamics/lib-installer",
-  "version": "0.1.0",
+  "name": "udx/lib-installer",
+  "version": "0.2.0",
   "type": "composer-installer",
   "license": "MIT",
   "description": "A multi-framework Composer library installer",
